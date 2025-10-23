@@ -1,0 +1,22 @@
+###############################################################################
+# codacy-analysis.yaml                                                        #
+# Adds the Codacy Analysis CLI GitHub Action to the workflow with Codacy's    #
+# default settings                                                            #
+# Author: Gavin Faircloth                                                     #
+# Version: 10/22/25                                                           #
+###############################################################################
+
+name: Codacy Analysis CLI
+
+on: ["push"]
+
+jobs:
+  codacy-analysis-cli:
+    name: Codacy Analysis CLI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+
+      - name: Run Codacy Analysis CLI
+        uses: codacy/codacy-analysis-cli-action@master
